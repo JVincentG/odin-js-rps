@@ -1,1 +1,1 @@
-# odin-js-rpc
+# odin-js-rps
