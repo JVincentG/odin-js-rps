@@ -33,6 +33,28 @@ function playRound(playerSelection, computerSelection) {
     };
 };
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection))
+function game(){
+    let playerScore = 0;
+    let pcScore = 0;
+    for(let gameRound = 0; gameRound < 5; gameRound++){
+        playerSelection = prompt("Rock? Paper? or Scissors?")
+        const computerSelection = getComputerChoice();
+        let roundResult = playRound(playerSelection, computerSelection)
+        console.log(roundResult);
+        let roundCount = roundResult.toString().slice(0,9);
+        if (roundCount === "You win! "){
+            playerScore = playerScore +1;
+        } else if (roundCount === "You lose!"){
+            pcScore = pcScore +1;
+        };
+    };
+    if (playerScore > pcScore){
+        alert("Congrats! you win the Bo5 round!")
+    } else if (playerScore < pcScore){
+        alert("Better luck next time. You lose for this Bo5 but you will win next time!")
+    } else if (playerScore === pcScore){
+        alert("It's a tie! Play another Bo5 to see who is the real winner!")
+    };
+};
+
+game()
